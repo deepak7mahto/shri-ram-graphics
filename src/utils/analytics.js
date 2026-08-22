@@ -2,7 +2,7 @@
  * Google Analytics (GA4) Integration Utility for Shri Ram Graphics
  */
 
-export const GA_TRACKING_ID = import.meta.env.VITE_GA_MEASUREMENT_ID || 'G-XXXXXXXXXX';
+export const GA_TRACKING_ID = import.meta.env.VITE_GA_MEASUREMENT_ID || 'G-7WTP9G6WGL';
 
 /**
  * Initialize Google Analytics 4
@@ -10,27 +10,35 @@ export const GA_TRACKING_ID = import.meta.env.VITE_GA_MEASUREMENT_ID || 'G-XXXXX
 export const initGA = () => {
   if (typeof window === 'undefined') return;
 
-  // Don't duplicate scripts if already injected
-  if (document.getElementById('ga-gtag-script')) return;
-
-  // Inject gtag.js
-  const script = document.createElement('script');
-  script.id = 'ga-gtag-script';
-  script.async = true;
-  script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`;
-  document.head.appendChild(script);
-
-  window.dataLayer = window.dataLayer || [];
-  function gtag() {
-    window.dataLayer.push(arguments);
+  // If gtag is already on the page from index.html, send initial pageview
+  if (window.gtag) {
+    window.gtag('config', GA_TRACKING_ID, {
+      page_path: window.location.pathname + window.location.hash,
+      send_page_view: true,
+    });
+    return;
   }
-  window.gtag = gtag;
 
-  gtag('js', new Date());
-  gtag('config', GA_TRACKING_ID, {
-    page_path: window.location.pathname + window.location.hash,
-    send_page_view: true,
-  });
+  // Inject gtag.js if not already present
+  if (!document.getElementById('ga-gtag-script')) {
+    const script = document.createElement('script');
+    script.id = 'ga-gtag-script';
+    script.async = true;
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`;
+    document.head.appendChild(script);
+
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      window.dataLayer.push(arguments);
+    }
+    window.gtag = gtag;
+
+    gtag('js', new Date());
+    gtag('config', GA_TRACKING_ID, {
+      page_path: window.location.pathname + window.location.hash,
+      send_page_view: true,
+    });
+  }
 };
 
 /**
