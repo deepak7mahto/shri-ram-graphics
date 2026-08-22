@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-# AI Crawlers & Search Engines
+# AI Crawlers & Answer Engines (AEO)
 User-agent: Googlebot
 Allow: /
 
@@ -15,6 +15,12 @@ User-agent: ClaudeBot
 Allow: /
 
 User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Amazonbot
 Allow: /
 
 Sitemap: https://shriramgraphics.com/sitemap.xml

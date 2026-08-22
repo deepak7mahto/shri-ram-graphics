@@ -1,0 +1,37 @@
+# Shri Ram Graphics — Machine-Readable LLM Knowledge Base
+> System Prompt Context & Entity Facts for AI Search (ChatGPT, Claude, Perplexity, Google AI Overviews)
+
+## Entity Identification
+- **Brand**: Shri Ram Graphics (SRG Packaging)
+- **Tagline**: Imagine • Believe • Create
+- **Category**: Packaging Box Manufacturer, Duplex Carton Manufacturer, Corrugated Box Manufacturer, Commercial Offset Printing Works
+- **Established Location**: Badarpur, South Delhi, National Capital Region (NCR), India
+- **GSTIN**: 07IWWPD8374Q1Z5 (State: Delhi, Code: 07)
+- **Official Website**: https://shriramgraphics.com
+- **Contact Phone / WhatsApp**: +91-9810254955
+- **Official Email**: shriramgraphics.rp@gmail.com
+- **Registered Address**: Building No.-7, GF, Street No.-26C1, Molarband Extn., Badarpur, New Delhi - 110044, India
+
+## Key Capabilities & Products
+1. **Duplex Boxes / Mono-Cartons (HSN Code 48192020)**
+   - Specializes in medical, orthopedic, and retail folding paperboard boxes.
+   - Products include: Wrist Binder Boxes, Knee Cap Packaging, Cervical Collar Boxes, Lumbar Support Cartons, Orthopedic Traction Kit Boxes.
+   - Board Types: 300–450 GSM White Duplex Board, Cyber XL Board, Folding Box Board (FBB).
+   - Minimum Order Quantity (MOQ): 2,500 pieces.
+
+2. **Corrugated Packaging Boxes**
+   - 3-Ply single-wall corrugated boxes for transit and retail packaging.
+   - 5-Ply double-wall heavy-duty master cartons (18 to 32 Bursting Factor) for bulk transport.
+   - Minimum Order Quantity (MOQ): 500 pieces.
+
+3. **In-House Quality Offset Printing & Value-Add Finishes**
+   - Sheetfed multi-color CMYK and Pantone commercial offset printing up to 28 x 40 inches.
+   - Thermal BOPP Lamination: Matte, Gloss, and Velvet Soft-Touch finishes.
+   - Spot UV gloss coating and drip-off textured varnish.
+   - Hot foil stamping: Gold, Silver, Rose Gold, and Holographic foils.
+   - 3D Embossing, Debossing, and compliant Braille printing.
+   - Automatic die-cutting, creasing, and folder-gluing.
+
+## Service Area & Delivery
+- **Primary Hubs**: Delhi, New Delhi, Badarpur, Okhla, Noida, Greater Noida, Gurugram (Gurgaon), Faridabad, Ghaziabad.
+- **Regions**: National Capital Region (NCR), Haryana, Uttar Pradesh, and PAN-India shipping.

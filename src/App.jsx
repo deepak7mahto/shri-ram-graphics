@@ -4,6 +4,7 @@ import Navbar from './components/layout/Navbar';
 import HeroSection from './components/hero/HeroSection';
 import BoxesManufacturingSection from './components/sections/BoxesManufacturingSection';
 import OffsetPrintingSection from './components/sections/OffsetPrintingSection';
+import FAQSection from './components/sections/FAQSection';
 import PlantAndContactSection from './components/sections/PlantAndContactSection';
 import Footer from './components/layout/Footer';
 
@@ -33,7 +34,10 @@ export default function App() {
         {/* Quality Offset Printing Works & Finishes */}
         <OffsetPrintingSection theme={theme} />
 
-        {/* Factory Plant at Okhla Phase-I, Registered Office at Badarpur & Direct Inquiries */}
+        {/* B2B Procurement FAQ (AEO & Search Knowledge Graph) */}
+        <FAQSection theme={theme} />
+
+        {/* Registered Office at Badarpur & Direct Inquiries */}
         <PlantAndContactSection theme={theme} />
 
       </main>
