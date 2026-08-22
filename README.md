@@ -25,7 +25,7 @@
 * **Registered Office**: `Building No.-7, GF, Street No.-26C1, Molarband Extn., Badarpur, New Delhi - 110044`
 * **GSTIN**: `07IWWPD8374Q1Z5`
 * **Jurisdiction**: Delhi (State Code: 07)
-* **Phone / WhatsApp**: `+91-9810254955` / `+91-9716373323`
+* **Phone / WhatsApp**: `+91-9810254955`
 * **Email**: `shriramgraphics.rp@gmail.com`
 
 ---

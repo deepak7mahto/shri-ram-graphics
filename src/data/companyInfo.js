@@ -5,8 +5,6 @@ export const companyInfo = {
   subtitle: "Creative Designs & Quality Offset Printing Works | Mfrs. of Duplex & Corrugated Boxes",
   phone: "+91-9810254955",
   phoneRaw: "919810254955",
-  secondaryPhone: "+91-9716373323",
-  secondaryPhoneRaw: "919716373323",
   email: "shriramgraphics.rp@gmail.com",
   gstin: "07IWWPD8374Q1Z5",
   stateCode: "Delhi, 07",

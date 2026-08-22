@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, Mail, MapPin, ShieldCheck, MessageCircle, ArrowUpRight } from 'lucide-react';
+import { Phone, Mail, MapPin, ShieldCheck, MessageCircle } from 'lucide-react';
 import { companyInfo } from '../../data/companyInfo';
 
 export default function Footer({ theme = 'gold' }) {
@@ -69,26 +69,19 @@ export default function Footer({ theme = 'gold' }) {
             <h4 className="font-display font-bold text-sm text-white uppercase tracking-wider">
               Contact Desk
             </h4>
-            <div className="space-y-2.5">
+            <div className="space-y-3">
               <a
                 href={`tel:${companyInfo.phoneRaw}`}
-                className="flex items-center gap-2 text-slate-300 hover:text-amber-400 transition"
+                className="flex items-center gap-2 text-slate-200 hover:text-amber-400 transition"
               >
-                <Phone className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-                <span className="font-bold">{companyInfo.phone}</span>
-              </a>
-              <a
-                href={`tel:${companyInfo.secondaryPhoneRaw}`}
-                className="flex items-center gap-2 text-slate-400 hover:text-amber-400 transition"
-              >
-                <Phone className="w-3.5 h-3.5 text-slate-500 shrink-0" />
-                <span>{companyInfo.secondaryPhone}</span>
+                <Phone className="w-4 h-4 text-amber-400 shrink-0" />
+                <span className="font-bold text-sm">{companyInfo.phone}</span>
               </a>
               <a
                 href={`mailto:${companyInfo.email}`}
                 className="flex items-center gap-2 text-slate-300 hover:text-white transition truncate block"
               >
-                <Mail className="w-3.5 h-3.5 text-slate-500 shrink-0" />
+                <Mail className="w-3.5 h-3.5 text-slate-400 shrink-0" />
                 <span className="truncate">{companyInfo.email}</span>
               </a>
             </div>

@@ -99,7 +99,7 @@ ${formData.message ? `📝 *Requirements*: ${formData.message}` : ''}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 max-w-5xl mx-auto">
           
           {/* Quick Contact Desk */}
-          <div className="lg:col-span-5 bg-slate-900 text-white rounded-3xl p-8 shadow-xl space-y-5 flex flex-col justify-between">
+          <div className="lg:col-span-5 bg-slate-900 text-white rounded-3xl p-8 shadow-xl space-y-6 flex flex-col justify-between">
             <div>
               <div className="text-xs font-bold uppercase tracking-wider text-amber-400 mb-2">
                 Direct Contact & Support
@@ -111,24 +111,17 @@ ${formData.message ? `📝 *Requirements*: ${formData.message}` : ''}
                 Have a packaging question or require urgent custom carton batch delivery? Call our team directly.
               </p>
 
-              <div className="space-y-3.5 text-xs text-slate-200">
-                <div className="bg-slate-800/90 p-3.5 rounded-2xl border border-slate-700">
-                  <div className="text-slate-400 text-[10px] uppercase font-bold">Primary Mobile / WhatsApp</div>
-                  <a href={`tel:${companyInfo.phoneRaw}`} className="text-lg font-bold text-amber-400 hover:underline block mt-0.5">
+              <div className="space-y-4 text-xs text-slate-200">
+                <div className="bg-slate-800/90 p-4 rounded-2xl border border-slate-700">
+                  <div className="text-slate-400 text-[10px] uppercase font-bold">Mobile & WhatsApp</div>
+                  <a href={`tel:${companyInfo.phoneRaw}`} className="text-lg font-bold text-amber-400 hover:underline block mt-1">
                     {companyInfo.phone}
                   </a>
                 </div>
 
-                <div className="bg-slate-800/90 p-3.5 rounded-2xl border border-slate-700">
-                  <div className="text-slate-400 text-[10px] uppercase font-bold">Secondary Contact</div>
-                  <a href={`tel:${companyInfo.secondaryPhoneRaw}`} className="text-base font-bold text-white hover:underline block mt-0.5">
-                    {companyInfo.secondaryPhone}
-                  </a>
-                </div>
-
-                <div className="bg-slate-800/90 p-3.5 rounded-2xl border border-slate-700">
+                <div className="bg-slate-800/90 p-4 rounded-2xl border border-slate-700">
                   <div className="text-slate-400 text-[10px] uppercase font-bold">Official Email</div>
-                  <a href={`mailto:${companyInfo.email}`} className="text-sm font-bold text-white hover:underline block mt-0.5">
+                  <a href={`mailto:${companyInfo.email}`} className="text-sm font-bold text-white hover:underline block mt-1">
                     {companyInfo.email}
                   </a>
                 </div>
