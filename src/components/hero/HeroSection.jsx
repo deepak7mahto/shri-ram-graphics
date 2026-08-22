@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRight, CheckCircle2, Phone, ShieldCheck, Box, MessageCircle, Sparkles, Printer, Building } from 'lucide-react';
 import { companyInfo } from '../../data/companyInfo';
+import { trackWhatsAppClick } from '../../utils/analytics';
 
 export default function HeroSection({ theme = 'gold' }) {
   const isGold = theme === 'gold';
@@ -70,6 +71,7 @@ export default function HeroSection({ theme = 'gold' }) {
               href={`https://wa.me/${companyInfo.phoneRaw}?text=${encodeURIComponent('Hi Shri Ram Graphics, I want to inquire about duplex and corrugated box manufacturing.')}`}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackWhatsAppClick('Hero Section CTA')}
               className="px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-md shadow-emerald-600/20 transition flex items-center gap-2 transform active:scale-95"
             >
               <MessageCircle className="w-4 h-4 fill-current" />

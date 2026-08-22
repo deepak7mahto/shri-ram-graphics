@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import TopBar from './components/layout/TopBar';
 import Navbar from './components/layout/Navbar';
 import HeroSection from './components/hero/HeroSection';
@@ -7,9 +7,14 @@ import OffsetPrintingSection from './components/sections/OffsetPrintingSection';
 import FAQSection from './components/sections/FAQSection';
 import PlantAndContactSection from './components/sections/PlantAndContactSection';
 import Footer from './components/layout/Footer';
+import { initGA } from './utils/analytics';
 
 export default function App() {
   const [theme, setTheme] = useState('gold'); // 'gold' or 'redblue'
+
+  useEffect(() => {
+    initGA();
+  }, []);
 
   return (
     <div className={`min-h-screen text-slate-800 flex flex-col font-sans transition-colors ${

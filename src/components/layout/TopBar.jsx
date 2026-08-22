@@ -1,6 +1,7 @@
 import React from 'react';
 import { Phone, ShieldCheck, Building2 } from 'lucide-react';
 import { companyInfo } from '../../data/companyInfo';
+import { trackPhoneCall } from '../../utils/analytics';
 
 export default function TopBar() {
   return (
@@ -26,6 +27,7 @@ export default function TopBar() {
 
           <a
             href={`tel:${companyInfo.phoneRaw}`}
+            onClick={trackPhoneCall}
             className="flex items-center gap-1 text-amber-400 hover:text-amber-300 font-bold transition whitespace-nowrap"
           >
             <Phone className="w-3 h-3 shrink-0" />

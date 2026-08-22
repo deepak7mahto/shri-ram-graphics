@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Phone, Mail, MapPin, Send, MessageCircle, ShieldCheck, CheckCircle2, Building2, ArrowUpRight } from 'lucide-react';
 import { companyInfo } from '../../data/companyInfo';
+import { trackWhatsAppClick, trackPhoneCall, trackInquirySubmit } from '../../utils/analytics';
 
 export default function PlantAndContactSection({ theme = 'gold' }) {
   const [formData, setFormData] = useState({
@@ -17,6 +18,9 @@ export default function PlantAndContactSection({ theme = 'gold' }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // Track analytics lead event
+    trackInquirySubmit(formData.serviceRequired, formData.boxType);
 
     const text = `📦 *INQUIRY - SHRI RAM GRAPHICS*
 ────────────────────────
@@ -114,7 +118,11 @@ ${formData.message ? `📝 *Requirements*: ${formData.message}` : ''}
               <div className="space-y-4 text-xs text-slate-200">
                 <div className="bg-slate-800/90 p-4 rounded-2xl border border-slate-700">
                   <div className="text-slate-400 text-[10px] uppercase font-bold">Mobile & WhatsApp</div>
-                  <a href={`tel:${companyInfo.phoneRaw}`} className="text-lg font-bold text-amber-400 hover:underline block mt-1">
+                  <a
+                    href={`tel:${companyInfo.phoneRaw}`}
+                    onClick={trackPhoneCall}
+                    className="text-lg font-bold text-amber-400 hover:underline block mt-1"
+                  >
                     {companyInfo.phone}
                   </a>
                 </div>
@@ -132,6 +140,7 @@ ${formData.message ? `📝 *Requirements*: ${formData.message}` : ''}
               href={`https://wa.me/${companyInfo.phoneRaw}?text=${encodeURIComponent('Hi Shri Ram Graphics, I want to discuss duplex and corrugated box manufacturing.')}`}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackWhatsAppClick('Contact Section Desk')}
               className="w-full py-4 px-4 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-lg transition mt-4"
             >
               <MessageCircle className="w-5 h-5 fill-current" />

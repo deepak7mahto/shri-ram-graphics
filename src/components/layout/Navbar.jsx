@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Menu, X, MessageCircle, Sparkles } from 'lucide-react';
+import { Menu, X, MessageCircle, Phone, Sparkles } from 'lucide-react';
 import { companyInfo } from '../../data/companyInfo';
+import { trackWhatsAppClick, trackThemeSwitch } from '../../utils/analytics';
 
 export default function Navbar({ theme = 'gold', setTheme }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -9,18 +10,24 @@ export default function Navbar({ theme = 'gold', setTheme }) {
     { name: 'Home', href: '#home' },
     { name: 'Box Products', href: '#boxes-manufacturing' },
     { name: 'Offset Printing Works', href: '#offset-printing' },
+    { name: 'FAQ', href: '#faq' },
     { name: 'Contact & Office', href: '#contact' },
   ];
 
   const currentLogo = theme === 'gold' ? companyInfo.logos.gold : companyInfo.logos.redblue;
   const isGold = theme === 'gold';
 
+  const handleThemeChange = (newTheme) => {
+    setTheme(newTheme);
+    trackThemeSwitch(newTheme);
+  };
+
   return (
     <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
       <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20">
           
-          {/* Brand Logo & Name (Visible on Mobile & Desktop) */}
+          {/* Brand Logo & Name */}
           <a href="#home" className="flex items-center gap-2.5 sm:gap-3.5 group shrink-0 min-w-0">
             <div className="h-10 sm:h-12 py-1 px-2 rounded-xl bg-slate-950 flex items-center justify-center border border-slate-800 shadow-sm shrink-0">
               <img
@@ -43,7 +50,7 @@ export default function Navbar({ theme = 'gold', setTheme }) {
           </a>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-7 xl:gap-9">
+          <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
             {navLinks.map((link) => (
               <a
                 key={link.name}
@@ -61,7 +68,7 @@ export default function Navbar({ theme = 'gold', setTheme }) {
             {/* Theme Toggle */}
             <div className="bg-slate-100 p-1 rounded-xl border border-slate-200 flex items-center gap-1 text-xs">
               <button
-                onClick={() => setTheme('gold')}
+                onClick={() => handleThemeChange('gold')}
                 className={`px-2.5 py-1 rounded-lg font-bold flex items-center gap-1 transition ${
                   isGold
                     ? 'bg-amber-500 text-slate-950 shadow-sm'
@@ -74,7 +81,7 @@ export default function Navbar({ theme = 'gold', setTheme }) {
               </button>
 
               <button
-                onClick={() => setTheme('redblue')}
+                onClick={() => handleThemeChange('redblue')}
                 className={`px-2.5 py-1 rounded-lg font-bold flex items-center gap-1 transition ${
                   !isGold
                     ? 'bg-blue-700 text-white shadow-sm'
@@ -91,6 +98,7 @@ export default function Navbar({ theme = 'gold', setTheme }) {
               href={`https://wa.me/${companyInfo.phoneRaw}?text=${encodeURIComponent('Hi Shri Ram Graphics, I would like to inquire about custom box manufacturing and printing.')}`}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackWhatsAppClick('Navbar Desktop Header')}
               className="px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold shadow-md shadow-emerald-600/20 transition flex items-center gap-1.5 whitespace-nowrap"
             >
               <MessageCircle className="w-4 h-4 fill-current" />
@@ -101,7 +109,7 @@ export default function Navbar({ theme = 'gold', setTheme }) {
           {/* Mobile Right Actions */}
           <div className="flex lg:hidden items-center gap-1.5 sm:gap-2">
             <button
-              onClick={() => setTheme(isGold ? 'redblue' : 'gold')}
+              onClick={() => handleThemeChange(isGold ? 'redblue' : 'gold')}
               className={`px-2 py-1 rounded-lg text-[10px] sm:text-xs font-bold border transition ${
                 isGold
                   ? 'bg-amber-100 text-amber-900 border-amber-300'
@@ -143,6 +151,10 @@ export default function Navbar({ theme = 'gold', setTheme }) {
               href={`https://wa.me/${companyInfo.phoneRaw}`}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => {
+                trackWhatsAppClick('Navbar Mobile Drawer');
+                setMobileMenuOpen(false);
+              }}
               className="w-full py-2.5 rounded-xl bg-emerald-600 text-white text-xs font-bold text-center flex items-center justify-center gap-2"
             >
               <MessageCircle className="w-4 h-4 fill-current" />

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Phone, Mail, MapPin, ShieldCheck, MessageCircle } from 'lucide-react';
 import { companyInfo } from '../../data/companyInfo';
+import { trackWhatsAppClick, trackPhoneCall } from '../../utils/analytics';
 
 export default function Footer({ theme = 'gold' }) {
   const currentYear = new Date().getFullYear();
@@ -72,6 +73,7 @@ export default function Footer({ theme = 'gold' }) {
             <div className="space-y-3">
               <a
                 href={`tel:${companyInfo.phoneRaw}`}
+                onClick={trackPhoneCall}
                 className="flex items-center gap-2 text-slate-200 hover:text-amber-400 transition"
               >
                 <Phone className="w-4 h-4 text-amber-400 shrink-0" />
@@ -98,6 +100,7 @@ export default function Footer({ theme = 'gold' }) {
             <a href="#home" className="hover:text-white transition">Home</a>
             <a href="#boxes-manufacturing" className="hover:text-white transition">Box Products</a>
             <a href="#offset-printing" className="hover:text-white transition">Offset Printing</a>
+            <a href="#faq" className="hover:text-white transition">FAQ</a>
             <a href="#contact" className="hover:text-white transition">Contact</a>
           </div>
         </div>
@@ -110,6 +113,7 @@ export default function Footer({ theme = 'gold' }) {
           href={`https://wa.me/${companyInfo.phoneRaw}?text=${encodeURIComponent('Hi Shri Ram Graphics team, I am interested in custom packaging box manufacturing.')}`}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => trackWhatsAppClick('Floating Button')}
           className="group flex items-center gap-2 px-4 py-3 bg-emerald-600 hover:bg-emerald-500 text-white rounded-full shadow-2xl shadow-emerald-600/40 transition transform hover:scale-105 active:scale-95 border-2 border-emerald-400/50"
         >
           <MessageCircle className="w-5 h-5 fill-current" />
